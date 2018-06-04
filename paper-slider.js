@@ -36,6 +36,7 @@ Custom property | Description | Default
 `--paper-slider-active-color` | The progress bar color | `--google-blue-700`
 `--paper-slider-secondary-color` | The secondary progress bar color | `--google-blue-300`
 `--paper-slider-knob-color` | The knob color | `--google-blue-700`
+`--paper-slider-knob-border` | The knob border | `--google-blue-700`
 `--paper-slider-disabled-knob-color` | The disabled knob color | `--paper-grey-400`
 `--paper-slider-pin-color` | The pin color | `--google-blue-700`
 `--paper-slider-font-color` | The pin's text color | `#fff`
@@ -177,7 +178,7 @@ $_documentContainer.innerHTML = `<dom-module id="paper-slider">
 
       .slider-markers {
         position: absolute;
-        top: calc(14px + var(--paper-slider-height,2px)/2);
+        top: calc(5px + var(--paper-slider-height,2px)/2);
         height: var(--calculated-paper-slider-height);
         left: 0;
         right: -1px;
@@ -195,8 +196,7 @@ $_documentContainer.innerHTML = `<dom-module id="paper-slider">
         display: block;
         margin-left: -1px;
         width: 2px;
-        height: var(--calculated-paper-slider-height);
-        border-radius: 50%;
+        height: calc(10*var(--calculated-paper-slider-height));
         background-color: var(--paper-slider-markers-color, #000);
       }
 
@@ -231,8 +231,8 @@ $_documentContainer.innerHTML = `<dom-module id="paper-slider">
         width: calc(100% - 20px);
         height: calc(100% - 20px);
         background-color: var(--paper-slider-knob-color, var(--google-blue-700));
-        border: 2px solid var(--paper-slider-knob-color, var(--google-blue-700));
-        border-radius: 50%;
+        border: 2px solid var(--paper-slider-knob-border, var(--google-blue-700));
+        border-radius: 10%;
 
         -moz-box-sizing: border-box;
         box-sizing: border-box;
